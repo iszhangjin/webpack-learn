@@ -7,7 +7,8 @@ module.exports = {
 	mode: 'development',
 	entry: {
 		app: './src/index.js',
-		print: './src/print.js'
+		print: './src/print.js',
+		another: './src/another-module.js'
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -36,5 +37,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Development',
 		})
-	]
+	],
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		}
+	}
 };
